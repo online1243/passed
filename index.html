@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Job Registration Form</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#ffffff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.container{
+  width:100%;
+  max-width:400px;
+  background:#fff;
+  border-radius:25px;
+  padding:30px 25px;
+  box-shadow: 8px 8px 18px #d9d9d9,
+             -8px -8px 18px #ffffff;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:25px;
+  color:#111;
+  font-size:28px;
+}
+
+label{
+  display:block;
+  margin-bottom:8px;
+  margin-top:18px;
+  font-weight:bold;
+  color:#333;
+}
+
+.input{
+  width:100%;
+  border:none;
+  border-radius:15px;
+  padding:15px;
+  background-color:#e8e8e8;
+  box-shadow: 6px 6px 12px #ffffff,
+              -6px -6px 12px #c5c5c5;
+  font-size:15px;
+  font-weight:bold;
+}
+
+.input:focus{
+  outline-color:white;
+}
+
+.checkbox-area{
+  margin-top:22px;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.checkbox-area input{
+  margin-top:4px;
+  transform:scale(1.2);
+}
+
+.checkbox-area label{
+  margin:0;
+  font-size:14px;
+  line-height:1.5;
+}
+
+button{
+  width:100%;
+  margin-top:28px;
+  border:none;
+  padding:15px;
+  border-radius:15px;
+  background:#111;
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  opacity:0.9;
+  transform:scale(1.02);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Job Registration Form</h1>
+
+  <form id="jobForm">
+
+    <label>Ask Name :</label>
+    <input type="text" id="name" class="input" placeholder="Enter your name" required>
+
+    <label>Grade :</label>
+    <input type="text" id="grade" class="input" placeholder="Eg. 10th / 12th & more" required>
+
+    <label>Age :</label>
+    <input type="number" id="age" class="input" placeholder="Enter your age" required>
+
+    <div class="checkbox-area">
+      <input type="checkbox" id="ready" required>
+
+      <label for="ready">
+        Are you ready for daily give minimum 30 min's for this work?
+      </label>
+    </div>
+
+    <button type="submit">Submit</button>
+
+  </form>
+</div>
+
+<script>
+document.getElementById("jobForm").addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let grade = document.getElementById("grade").value;
+  let age = document.getElementById("age").value;
+
+  let message =
+  `I am ${name} and am ${age} y/o & my qualification is ${grade}. I am ready to give minimum 30 minutes daily for this work.`;
+
+  let telegramURL =
+  `https://t.me/Handwriting_work_job_997?text=${encodeURIComponent(message)}`;
+
+  window.open(telegramURL, "_blank");
+
+});
+</script>
+
+</body>
+</html>
